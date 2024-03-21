@@ -1,9 +1,27 @@
-import Navbar from "./components/Navbar";
+import { simpleBlogCard } from "./lib/interface";
+import { client } from "./lib/sanity";
 
-export default function Home() {
+async function getData() {
+  const query = `
+  *[_type == 'blog'] | order(_createAt desc){
+    title,
+      description,
+      "currentSlug": slug.current
+  }`
+
+  const data = await client.fetch(query)
+
+  return data;
+}
+
+
+export default async function Home() {
+  const data: simpleBlogCard[] = await getData();
+
+  console.log(data);
   return (
    <div>
-    <Navbar />
+   
     <h1>Hello from index</h1>
    </div>
   );

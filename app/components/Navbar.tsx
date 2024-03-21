@@ -7,7 +7,7 @@ export default function Navbar(){
            <Link href="/" className="font-bold text-3xl">
               Thadeus<span className="text-primary">Blog</span>
            </Link>
-           <ModeToggle />n
+           <ModeToggle />
         </nav>
     )
 }
