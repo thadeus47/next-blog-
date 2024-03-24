@@ -34,7 +34,7 @@ export default async function BlogArticle({ params}: { params:{slug: string}}) {
                className="rounded-lg mt-8 border"
             />
 
-            <div className="mt-16">
+            <div className="mt-16 prose prose-blue prose-xl dark:prose-invert">
                 <PortableText value={data.content}/>
             </div>
         </div>
