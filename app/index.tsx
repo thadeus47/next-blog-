@@ -32,7 +32,7 @@ export default function Home({ posts }: HomeProps) {
 }
 
 export const getStaticProps: GetStaticProps<HomeProps> = async () => {
-  // Fetch posts from an API or database
+  
   const res = await fetch('');
   const posts: Post[] = await res.json();
 
